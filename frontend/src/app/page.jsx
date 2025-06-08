@@ -11,7 +11,8 @@ const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL, {
 });
 
 const SIGNALING_SERVER =
-  process.env.NEXT_PUBLIC_SIGNALING_SERVER || "http://localhost:5000";
+  process.env.NEXT_PUBLIC_SIGNALING_SERVER ||
+  "https://draw2win-backend.onrender.com";
 
 const HomePage = () => {
   const [roomId, setRoomId] = useState("");

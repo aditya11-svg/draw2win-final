@@ -6,10 +6,6 @@ import Chat from "../components/Chat";
 import io from "socket.io-client";
 import GameArea from "@/components/gamearea";
 
-const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL, {
-  transports: ["websocket"],
-});
-
 const SIGNALING_SERVER =
   process.env.NEXT_PUBLIC_SIGNALING_SERVER ||
   "https://draw2win-backend.onrender.com";

@@ -6,23 +6,16 @@ const socketIo = require("socket.io");
 const app = express();
 const cors = require("cors");
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://draw2win-yuqg.vercel.app",
-];
-
-const corsOptions = {
-  origin: function (origin, callback) {
-    callback(null, true); // Allow all origins
-  },
-  methods: ["GET", "POST", "OPTIONS"],
-  credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization"],
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: [
+      "https://draw2winio.vercel.app", // your frontend URL
+      "http://localhost:3000",         // for local development
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 
 const server = http.createServer(app);
 const io = socketIo(server, {

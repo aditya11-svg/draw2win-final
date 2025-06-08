@@ -6,7 +6,10 @@ const socketIo = require("socket.io");
 const app = express();
 const cors = require("cors");
 
-const allowedOrigins = ["http://localhost:3000", "*"]; // Your frontend URL
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://draw2win-yuqg.vercel.app",
+];
 
 const corsOptions = {
   origin: function (origin, callback) {

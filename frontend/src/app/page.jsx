@@ -10,10 +10,6 @@ const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL, {
   transports: ["websocket"],
 });
 
-const response = await fetch(
-  `${process.env.NEXT_PUBLIC_API_URL}/your-endpoint`
-);  
-
 const SIGNALING_SERVER =
   process.env.NEXT_PUBLIC_SIGNALING_SERVER || "http://localhost:5000";
 
